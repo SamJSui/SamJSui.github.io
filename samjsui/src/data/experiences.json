@@ -1,0 +1,43 @@
+[
+    {
+      "title": "Software Engineering Consultant",
+      "company": "Sentinel Devices",
+      "duration": "October 2023 - Present",
+      "location": "Atlanta, GA (Remote)",
+      "description": [
+        "Coordinated DevOps initiatives to orchestrate the deployment of Docker services onto IoT devices with balenaCloud.",
+        "Pioneered the development of a NetworkManager library, boosting codebase readability and maintenance efficiency by 40%.",
+        "Engineered and rigorously unit-tested a robust industrial application in an AWS EC2 instance to enhance reliability by 40%.",
+        "Developed RESTful API endpoints and MQTT messaging, optimizing backend communication and data retrieval by 80%.",
+        "Architected on-device SQLite3 and cloud-based PostgreSQL schemas, significantly improving data storage and access times.",
+        "Integrated authentication infrastructure with secure user login, per-device SSL certificates, and JSON Web Tokens."
+      ],
+      "logo": "https://uploads-ssl.webflow.com/63c88dae7d5d84f1f933b321/63c89221886de83e7aea2947_SD_logo-p-500.jpg"
+    },
+    {
+      "title": "Software Engineer II Intern",
+      "company": "Walmart Global Tech",
+      "duration": "May 2023 - August 2023",
+      "location": "Bentonville, AR",
+      "description": [
+        "Spearheaded a team of 4 within Financial Technologies for a continuous integration deployment to further data-driven solutions.",
+        "Transformed and analyzed user analytics data and metrics to provide insights about financial analysts' software habits.",
+        "Created a data extraction module from GCP, saving analysts 18,000 hours weekly by seamlessly recommending reports.",
+        "Deployed the model as a Docker container on a Kubernetes staging cluster via a GitHub CI/CD pipeline to serve an API endpoint."
+      ],
+      "logo": "https://avatars.githubusercontent.com/u/768298?s=280&v=4"
+    },
+    {
+      "title": "Data Science Intern",
+      "company": "Tennessee Valley Authority",
+      "duration": "January 2023 - Present",
+      "location": "Chattanooga, TN (Remote)",
+      "description": [
+        "Launched a PowerBI dashboard to leverage NLP and provide real-time insights, reducing decision-making time by 30%.",
+        "Assisted in company partner savings of $4 Million by delivering in-house solutions and decision-influencing data visualizations.",
+        "Developed a drone-based object detection system, slashing inspection costs by 50% and saving over $500,000 annually."
+      ],
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/US-TennesseeValleyAuthority-Logo.svg/1200px-US-TennesseeValleyAuthority-Logo.svg.png"
+    }
+  ]
+  
