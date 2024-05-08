@@ -1,16 +1,16 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
-# Defines when the workflow will run
+# Specifies when the workflow will run
 on:
   push:
     branches:
       - main
       - gh-pages
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows manual execution from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions for the GITHUB_TOKEN
 permissions:
   contents: read
   pages: write
@@ -25,23 +25,34 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Step 2: Set up Node.js with the required version
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Specify your Node.js version, adjust as necessary
+          node-version: '16'  # Specify your required Node.js version
 
+      # Step 3: List files to confirm the presence of package.json
+      - name: List files
+        run: ls -la
+
+      # Step 4: Install project dependencies
       - name: Install Dependencies
         run: npm install
+        working-directory: .  # Adjust this path if `package.json` is not in the repository root
 
+      # Step 5: Build the project
       - name: Build Project
         run: npm run build
 
+      # Step 6: List the contents of the build directory to verify it exists
       - name: List directory contents
-        run: ls -l ./build  # Ensure the build folder is being listed
+        run: ls -la ./build
 
+      # Step 7: Upload build artifacts for deployment
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
@@ -51,5 +62,6 @@ jobs:
         env:
           GITHUB_PAGES: true
 
+      # Step 8: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
