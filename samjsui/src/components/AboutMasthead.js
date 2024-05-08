@@ -4,29 +4,29 @@ import { Link } from 'react-router-dom';
 
 function AboutMasthead() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center px-4">
+    <div className="min-h-screen flex flex-col justify-center items-center text-center pt-16 md:pt-24 px-4">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="space-y-4"
+        className="space-y-2 sm:space-y-4"
       >
-        <h1 className="text-5xl md:text-5xl font-bold">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
           Hi. My name is Sam.
         </h1>
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.2 }}
-          className="text-2xl md:text-3xl font-semibold"
+          className="text-xl sm:text-2xl md:text-3xl font-semibold"
         >
           I am a Software Engineer.
         </motion.h2>
       </motion.div>
 
-      <div className="mt-16 text-left max-w-4xl">
+      <div className="mt-8 md:mt-16 text-left max-w-4xl">
         <motion.p
-          className="text-2xl text-gray-700 mb-6 space-y-2 list-disc list-inside font-medium"
+          className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6 font-medium"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.4 }}
@@ -34,7 +34,7 @@ function AboutMasthead() {
           As a software engineer, I am passionate about:
         </motion.p>
         <motion.ul
-          className="text-xl text-gray-700 mb-6 space-y-2 list-disc list-inside"
+          className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 space-y-2 list-disc list-inside"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.4 }}
@@ -44,7 +44,7 @@ function AboutMasthead() {
           <li>Leveraging a wide variety of technologies to solve problems and create solutions</li>
         </motion.ul>
         <motion.p
-          className="text-2xl text-gray-700 mb-6 space-y-2 list-disc list-inside mt-8 font-medium"
+          className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6 mt-8 font-medium"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.6 }}
@@ -52,7 +52,7 @@ function AboutMasthead() {
           Get to know more about my journey in the tech world:
         </motion.p>
         <motion.ul
-          className="text-xl text-gray-700 mb-6 space-y-2 list-disc list-inside"
+          className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 space-y-2 list-disc list-inside"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.6 }}

@@ -16,7 +16,6 @@ const technologyIcons = {
 };
 
 const ProjectCard = ({ title, image, description, liveUrl, githubUrl, technologies }) => {
-  // Animation variants for the card
   const cardVariants = {
     offscreen: { y: 50, opacity: 0 },
     onscreen: {
