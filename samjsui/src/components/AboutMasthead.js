@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 function AboutMasthead() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center pt-16 md:pt-24 px-4">
+    <div className="min-h-screen flex flex-col justify-center items-center text-center md:px-4 px-8">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="space-y-2 sm:space-y-4"
+        className="space-y-2 sm:space-y-2"
       >
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
           Hi. My name is Sam.

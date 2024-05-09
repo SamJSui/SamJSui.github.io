@@ -7,12 +7,15 @@ function Header() {
   // Toggle the menu visibility
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // Close the menu
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <header className="bg-gray-800 text-white p-2">
       <nav className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/">
-          <h1 className="text-xl font-bold">Sam Sui</h1>
+          <h1 className="text-xl font-bold mx-4">Sam Sui</h1>
         </Link>
 
         {/* Hamburger Menu Button */}
@@ -41,12 +44,12 @@ function Header() {
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } absolute top-12 left-0 w-full bg-gray-800 md:hidden p-4`}
+          } absolute top-10 left-0 w-full bg-gray-800 md:hidden px-4 py-6`}
         >
-          <Link to="/" className="block p-2 hover:bg-blue-700 rounded">About</Link>
-          <Link to="/projects" className="block p-2 hover:bg-blue-700 rounded">Projects</Link>
-          <Link to="/experiences" className="block p-2 hover:bg-blue-700 rounded">Experiences</Link>
-          <Link to="/skills" className="block p-2 hover:bg-blue-700 rounded">Skills</Link>
+          <Link to="/" className="block p-3 hover:bg-blue-700 rounded" onClick={closeMenu}>About</Link>
+          <Link to="/projects" className="block p-3 hover:bg-blue-700 rounded" onClick={closeMenu}>Projects</Link>
+          <Link to="/experiences" className="block p-3 hover:bg-blue-700 rounded" onClick={closeMenu}>Experiences</Link>
+          <Link to="/skills" className="block p-3 hover:bg-blue-700 rounded" onClick={closeMenu}>Skills</Link>
         </div>
 
         {/* Navigation Links - Desktop (Visible) */}
