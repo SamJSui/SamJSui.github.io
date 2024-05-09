@@ -26,30 +26,33 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Adjust to your project's Node.js version
+          node-version: '16'
 
       - name: Install Dependencies
         run: npm install
-        working-directory: samjsui  # Set the working directory for this step
+        working-directory: samjsui
 
       - name: Build Project
         run: npm run build
-        working-directory: samjsui  # Set the working directory for this step
+        working-directory: samjsui
 
       - name: List build directory contents
-        run: ls -alh ./build
-        working-directory: samjsui  # Set the working directory for this step
+        run: ls -la ./build
+        working-directory: samjsui
+
+      - name: Archive artifact
+        run: |
+          tar --dereference --hard-dereference --directory $INPUT_PATH -cvf $RUNNER_TEMP/artifact.tar --exclude=.git --exclude=.github .
+        env:
+          GITHUB_PAGES: true
+          INPUT_PATH: ./samjsui/build
+          RUNNER_TEMP: ${{ runner.temp }}
 
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./samjsui/build
           name: github-pages
           retention-days: 1
         env:
           GITHUB_PAGES: true
-        # Do not use working-directory here because it's not a run command
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-        # Do not use working-directory here because it's not a run command
