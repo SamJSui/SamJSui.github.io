@@ -1,22 +1,17 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy static content to GitHub Pages
 
-# Specifies when the workflow will run
 on:
   push:
     branches:
       - main
       - gh-pages
-  # Allows manual execution from the Actions tab
   workflow_dispatch:
 
-# Sets permissions for the GITHUB_TOKEN
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Ensures only one deployment runs at a time
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -25,34 +20,26 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js with the required version
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Specify your required Node.js version
+          node-version: '16'  # Adjust to your project's Node.js version
 
-      # Step 3: List files to confirm the presence of package.json
-      - name: List files
-        run: ls -la
-
-      # Step 4: Install project dependencies
       - name: Install Dependencies
         run: npm install
-        working-directory: .  # Adjust this path if `package.json` is not in the repository root
+        working-directory: samjsui  # Set the working directory for this step
 
-      # Step 5: Build the project
       - name: Build Project
         run: npm run build
+        working-directory: samjsui  # Set the working directory for this step
 
-      # Step 6: List the contents of the build directory to verify it exists
-      - name: List directory contents
-        run: ls -la ./build
+      - name: List build directory contents
+        run: ls -alh ./build
+        working-directory: samjsui  # Set the working directory for this step
 
-      # Step 7: Upload build artifacts for deployment
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
@@ -61,7 +48,8 @@ jobs:
           retention-days: 1
         env:
           GITHUB_PAGES: true
+        # Do not use working-directory here because it's not a run command
 
-      # Step 8: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+        # Do not use working-directory here because it's not a run command
