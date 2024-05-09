@@ -3,17 +3,12 @@ name: Deploy static content to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger on main branch only for build and deployment
+      - main
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write  # Ensure write permissions are explicitly granted
   pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -25,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Ensure this version matches your project requirements
+          node-version: '20'
 
       - name: Install Dependencies
         run: npm install
@@ -39,7 +34,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
           publish_dir: ./samjsui/build
-          destination_dir: .  # Publishing directory on gh-pages
-          keep_files: false  # Set to true to retain files not overwritten by the deployment
-
