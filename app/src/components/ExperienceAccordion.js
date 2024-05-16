@@ -18,17 +18,25 @@ const ExperienceAccordion = ({ title, company, logo, duration, location, descrip
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-5 focus:outline-none flex items-start"
+        className="w-full p-5 focus:outline-none flex justify-between items-start"
         aria-expanded={isOpen}
       >
-        {logo && (
-          <img src={logo} alt={`${company} logo`} className="mr-4 w-16 h-16 rounded-full object-contain" />
-        )}
-        <div className="flex-grow">
-          <h2 className="text-lg font-semibold text-left">{title} <span className='text-sm text-gray-500 px-3'>{company}</span></h2>
-          <p className="text-sm text-gray-500">{duration} | {location}</p>
+        <div className="flex items-center space-x-4">
+          {logo && (
+            <img src={logo} alt={`${company} logo`} className="w-16 h-16 rounded-full object-contain" />
+          )}
+          <div className="flex-grow flex flex-col text-left">
+            <h2 className="text-lg font-semibold">{title}</h2>
+            <div className="text-sm text-gray-500">
+              <span>{company}</span>
+            </div>
+          </div>
         </div>
-        <span className="ml-4 flex-shrink-0 self-center">{isOpen ? '-' : '+'}</span>
+        <div className="flex flex-col items-end">
+          <p className="text-sm text-gray-500">{duration}</p>
+          <p className="text-sm text-gray-500">{location}</p>
+          <span className="text-lg">{isOpen ? '-' : '+'}</span>
+        </div>
       </button>
       {isOpen && (
         <div className="px-5 pt-2 pb-5" aria-hidden={!isOpen}>

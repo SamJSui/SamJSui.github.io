@@ -1,18 +1,53 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SiReact, SiFlask, SiNodedotjs, SiTailwindcss, SiFlutter, SiFirebase, SiAmazonaws, SiAmazonrds, SiBootstrap, SiElectron } from 'react-icons/si';
+import {
+  SiAmazonaws,
+  SiAmazonrds,
+  SiBootstrap,
+  SiCss3,
+  SiDigitalocean,
+  SiDji,
+  SiDotnet,
+  SiElectron,
+  SiExpress,
+  SiFirebase,
+  SiFlask,
+  SiFlutter,
+  SiGooglecloud,
+  SiHtml5,
+  SiJavascript,
+  SiMeta,
+  SiMongodb,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiTailwindcss,
+} from 'react-icons/si';
 
 const technologyIcons = {
-  "React": SiReact,
-  "Tailwind": SiTailwindcss,
-  "Node.js": SiNodedotjs,
+  "AWS": SiAmazonaws,
+  "Bootstrap": SiBootstrap,
+  "CSS": SiCss3,
+  "DigitalOcean": SiDigitalocean,
+  "DJI": SiDji,
+  "Electron": SiElectron,
+  "Express": SiExpress,
+  "Firebase": SiFirebase,
   "Flask": SiFlask,
   "Flutter": SiFlutter,
-  "Firebase": SiFirebase,
-  "AWS": SiAmazonaws,
+  "GCP": SiGooglecloud,
+  "HTML": SiHtml5,
+  "JavaScript": SiJavascript,
+  "Meta": SiMeta,
+  "MongoDB": SiMongodb,
+  "Node.js": SiNodedotjs,
+  ".NET": SiDotnet,
+  "PostgreSQL": SiPostgresql,
+  "Python": SiPython,
   "RDS": SiAmazonrds,
-  "Bootstrap": SiBootstrap,
-  "Electron": SiElectron
+  "React": SiReact,
+  "Tailwind": SiTailwindcss,
 };
 
 const ProjectCard = ({ title, image, description, liveUrl, githubUrl, technologies }) => {
@@ -35,22 +70,36 @@ const ProjectCard = ({ title, image, description, liveUrl, githubUrl, technologi
       variants={cardVariants}
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: 0.6 }}
+      viewport={{ once: true, amount: 0.5 }}
     >
       {githubUrl ? (
         <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="flex flex-col h-full">
-          <CardContent title={title} image={image} description={description} liveUrl={liveUrl} technologies={technologies} />
+          <CardContent
+            title={title}
+            image={image}
+            description={description}
+            liveUrl={liveUrl}
+            githubUrl={githubUrl}
+            technologies={technologies}
+          />
         </a>
       ) : (
         <div className="flex flex-col h-full">
-          <CardContent title={title} image={image} description={description} liveUrl={liveUrl} technologies={technologies} />
+          <CardContent
+            title={title}
+            image={image}
+            description={description}
+            liveUrl={liveUrl}
+            githubUrl={githubUrl}
+            technologies={technologies}
+          />
         </div>
       )}
     </motion.div>
   );
 };
 
-const CardContent = ({ title, image, description, liveUrl, technologies }) => (
+const CardContent = ({ title, image, description, liveUrl, githubUrl, technologies }) => (
   <>
     <img src={image} alt={title} className="w-full h-48 object-contain" /> {/* Use object-cover for better image fit */}
     <div className="p-4 flex flex-col flex-grow">

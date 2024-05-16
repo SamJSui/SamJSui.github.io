@@ -1,0 +1,53 @@
+[
+  {
+    "title": "KnoxMeals",
+    "description": "KnoxMeals utilizes NLP and ML to deliver personalized restaurant recommendations in Knoxville, TN.",
+    "technologies": ["React", "Bootstrap", "Flask", "DigitalOcean"],
+    "image": "knoxmeals.png",
+    "githubUrl": "https://github.com/SamJSui/KnoxMeals.com",
+    "liveUrl": "https://KnoxMeals.com"
+  },
+  {
+    "title": "Overhang",
+    "description": "A mobile application designed for the climbing community to share their sends, enabling routes to be graded by other climbers.",
+    "technologies": ["Flutter", "Firebase"],
+    "image": "overhang-logo.png",
+    "githubUrl": "https://github.com/OverhangApp"
+  },
+  {
+    "title": "SkyGuide",
+    "description": "A hands-free, automated drone system that utilizes object detection (YOLOv4) to control the device with asynchronous commands.",
+    "technologies": ["Python", "DJI"],
+    "image": "skyguide-logo.png",
+    "githubUrl": "https://github.com/SamJSui/SkyGuide"
+  },
+  {
+    "title": "Patchalysis",
+    "description": "A hands-free, automated drone system that utilizes object detection (YOLOv4) to control the device with asynchronous commands.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Flask", "MongoDB", "AWS"],
+    "image": "patchalysis.png",
+    "githubUrl": "https://github.com/SamJSui/SkyGuide"
+  },
+  {
+    "title": "Serenaid",
+    "description": "A mobile application that harnesses Meta's AudioCraft to generate individualized calming sounds to aid in sleeping experience.",
+    "technologies": ["React", "Node.js", "Meta", "GCP"],
+    "image": "serenaid.png",
+    "githubUrl": "https://github.com/Serenaid"
+  },
+  {
+    "title": "RiftAI",
+    "description": "A desktop application that leverages the power of generative AI to offer an in-depth analysis of League of Legends gameplay.",
+    "technologies": ["Electron", "Node.js", "PostgreSQL", "AWS"],
+    "image": "riftai-logo.png",
+    "githubUrl": "https://github.com/RiftAI"
+  },
+  {
+    "title": "TFTComp",
+    "description": "A cross-platform application that integrates AI with Riot Games' API to provide real-time data on Teamfight Tactics gameplay.",
+    "technologies": ["Electron", "Node.js", ".NET", "RDS"],
+    "image": "tftcomp-logo.png",
+    "githubUrl": "https://github.com/RiftAI"
+  }
+]
+  

@@ -60,7 +60,7 @@ const AboutContent = () => {
         <h1 className="text-3xl font-bold text-center py-4">Let's Connect</h1>
         <p className="text-lg">
           Feel free to reach out, so we can explore and work on something cool together! Connect with me on
-          <a href="https://linkedin.com/in/samuelsui" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700"> LinkedIn </a> 
+          <a href="https://linkedin.com/in/samuelsui" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700"> LinkedIn </a>
           or shoot me an <a href="mailto:ssui@vols.utk.edu" className="text-blue-500 hover:text-blue-700"> email</a>!
         </p>
       </motion.section>
