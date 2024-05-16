@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # Ensure write permissions are explicitly granted
+  contents: write # Ensure write permissions are explicitly granted
   pages: write
 
 jobs:
@@ -20,19 +20,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install Dependencies
         run: npm install
-        working-directory: samjsui
+        working-directory: app
 
       - name: Build Project
         run: npm run build
-        working-directory: samjsui
+        working-directory: app
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./samjsui/build
+          publish_dir: ./app/build
